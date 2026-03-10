@@ -108,7 +108,9 @@ export function AIButton({ isOpen, onOpenChange, showFloating }: AIButtonProps) 
       {showFloating && !isOpen && (
         <button
           onClick={() => onOpenChange(true)}
-          className="fixed bottom-6 right-6 z-50 flex items-center gap-3 text-white px-6 py-4 rounded-full shadow-2xl transition-all duration-300 transform hover:-translate-y-1 font-bold"
+          className="fixed z-50 flex items-center gap-3 text-white px-6 py-4 rounded-full shadow-2xl transition-all duration-300 transform hover:-translate-y-1 font-bold
+            bottom-6 left-1/2 -translate-x-1/2
+            lg:left-auto lg:right-6 lg:translate-x-0"
           style={{ background: 'linear-gradient(135deg, #FF8C42, #FF6B9D)', boxShadow: '0 8px 32px rgba(255,140,66,0.45)', animation: 'fadeInUp 0.3s ease-out' }}
         >
           <div className="relative">
@@ -118,13 +120,17 @@ export function AIButton({ isOpen, onOpenChange, showFloating }: AIButtonProps) 
               <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
             </span>
           </div>
-          Reservasi Sekarang
+          Mulai Reservasi
         </button>
       )}
 
       {/* ── Chat widget (shown whenever isOpen is true) ── */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-full max-w-[380px] h-[550px] max-h-[80vh] flex flex-col bg-white border border-orange-100 shadow-2xl rounded-2xl overflow-hidden"
+        <div
+          className="fixed z-50 flex flex-col bg-white border border-orange-100 shadow-2xl rounded-2xl overflow-hidden
+            bottom-0 left-0 right-0 w-full h-[75vh] rounded-b-none
+            sm:bottom-6 sm:left-1/2 sm:-translate-x-1/2 sm:w-[380px] sm:h-[550px] sm:max-h-[80vh] sm:rounded-2xl
+            lg:left-auto lg:right-6 lg:translate-x-0"
           style={{ animation: 'fadeInUp 0.2s ease-out' }}>
 
           {/* Header */}
